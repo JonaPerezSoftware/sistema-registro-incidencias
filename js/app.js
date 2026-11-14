@@ -6,7 +6,7 @@
   'use strict';
 
   const CLAVE = 'incidencias.v1';
-  const { crearIncidencia, cambiarEstado, validarIncidencia, ESTADOS } = window.Incidencias;
+  const { crearIncidencia, cambiarEstado, filtrarPorEstado, validarIncidencia, ESTADOS } = window.Incidencias;
 
   const EJEMPLOS = [
     { id: 1, titulo: 'No carga el reporte mensual', descripcion: 'Al abrir el reporte aparece una pantalla en blanco.', reportadoPor: 'Ana Torres', prioridad: 'Alta', estado: 'Abierta', fecha: '2026-11-10T14:05:00.000Z' },
@@ -36,6 +36,7 @@
   const form = document.getElementById('form-incidencia');
   const errores = document.getElementById('errores');
   const cuerpo = document.getElementById('cuerpo-tabla');
+  const filtro = document.getElementById('filtro-estado');
   const contador = document.getElementById('contador');
 
   function escapar(texto) {
@@ -49,8 +50,8 @@
   }
 
   function render() {
-    const visibles = incidencias;
-    contador.textContent = 'Total: ' + incidencias.length + ' incidencias';
+    const visibles = filtrarPorEstado(incidencias, filtro.value);
+    contador.textContent = 'Mostrando ' + visibles.length + ' de ' + incidencias.length + ' incidencias';
 
     if (!visibles.length) {
       cuerpo.innerHTML = '<tr><td colspan="6" class="vacio">No hay incidencias para mostrar.</td></tr>';
@@ -96,6 +97,8 @@
       render();
     }
   });
+
+  filtro.addEventListener('change', render);
 
   render();
 })();
