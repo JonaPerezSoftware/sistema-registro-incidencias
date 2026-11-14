@@ -1,6 +1,6 @@
 # Sistema de Registro de Incidencias
 
-Aplicación web sencilla para **registrar y listar incidencias** reportadas por los usuarios de una empresa de software. El proyecto se usa para practicar la **gestión de la configuración del software**: control de versiones con Git, ramas y pull requests, versionamiento semántico, releases y despliegue continuo con GitHub Actions y GitHub Pages.
+Aplicación web sencilla para **registrar, listar y filtrar incidencias** reportadas por los usuarios de una empresa de software. El proyecto se usa para practicar la **gestión de la configuración del software**: control de versiones con Git, ramas y pull requests, versionamiento semántico, releases y despliegue continuo con GitHub Actions y GitHub Pages.
 
 **Aplicación publicada:** https://jonaperezsoftware.github.io/sistema-registro-incidencias/
 
@@ -9,13 +9,14 @@ Aplicación web sencilla para **registrar y listar incidencias** reportadas por 
 | Versión | Cambios |
 |---|---|
 | `v1.0.0` | Registro de incidencias (título, descripción, quién reporta, prioridad) y listado con cambio de estado. |
+| `v1.1.0` | Filtro de incidencias por estado (Todas, Abierta, En proceso, Resuelta) y contador de resultados. |
 
 ## Estructura del proyecto
 
 ```
 ├── index.html                 # Interfaz de la aplicación
 ├── css/styles.css             # Estilos
-├── js/incidencias.js          # Lógica de negocio (validar, crear, cambiar estado)
+├── js/incidencias.js          # Lógica de negocio (validar, crear, cambiar estado, filtrar)
 ├── js/app.js                  # Conexión de la lógica con la interfaz
 ├── tests/incidencias.test.js  # Pruebas automáticas (node:test)
 ├── package.json               # Script "npm test"

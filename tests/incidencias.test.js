@@ -36,6 +36,15 @@ test('cambia el estado de una incidencia', () => {
   assert.strictEqual(base[0].estado, 'Abierta');
 });
 
+test('filtra por estado "todas"', () => {
+  assert.strictEqual(inc.filtrarPorEstado(base, 'todas').length, 3);
+});
+
+test('filtra por estado abierta y resuelta', () => {
+  assert.deepStrictEqual(inc.filtrarPorEstado(base, 'abierta').map(i => i.id), [1]);
+  assert.deepStrictEqual(inc.filtrarPorEstado(base, 'resuelta').map(i => i.id), [3]);
+});
+
 test('index.html enlaza los scripts de la aplicación', () => {
   const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
   assert.ok(html.includes('js/incidencias.js'));
