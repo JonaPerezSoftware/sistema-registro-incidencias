@@ -8,6 +8,11 @@
   const ESTADOS = ['Abierta', 'En proceso', 'Resuelta'];
   const PRIORIDADES = ['Baja', 'Media', 'Alta'];
 
+  /** Convierte "En proceso", "en-proceso" o "EN_PROCESO" en "en-proceso". */
+  function normalizar(texto) {
+    return String(texto).trim().toLowerCase().replace(/[\s_-]+/g, '-');
+  }
+
   /** Devuelve una lista de mensajes de error; vacía si los datos son válidos. */
   function validarIncidencia(datos) {
     const errores = [];
@@ -59,12 +64,13 @@
     if (!filtro || filtro === 'todas') {
       return lista.slice();
     }
-    return lista.filter(i => i.estado.toLowerCase() === filtro);
+    return lista.filter(i => normalizar(i.estado) === normalizar(filtro));
   }
 
   const api = {
     ESTADOS,
     PRIORIDADES,
+    normalizar,
     validarIncidencia,
     crearIncidencia,
     cambiarEstado,
