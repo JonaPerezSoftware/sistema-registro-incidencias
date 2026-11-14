@@ -1,6 +1,6 @@
 {
   "name": "sistema-registro-incidencias",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Aplicación web sencilla para registrar y listar incidencias reportadas por usuarios.",
   "scripts": {
     "test": "node --test tests/incidencias.test.js"
