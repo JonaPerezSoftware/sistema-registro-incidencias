@@ -52,3 +52,6 @@ Las incidencias se guardan en el `localStorage` del navegador.
 ## Asignatura
 
 Gestión de la Configuración del Software · Unidad 3: Gestión de la construcción y despliegue continuo · Tema 3: Despliegue continuo.
+
+## Autores
+- Anghello Fernando Almeida Campoverde (AnghelloAlmeida)
