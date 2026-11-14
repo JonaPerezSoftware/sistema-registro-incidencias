@@ -55,3 +55,5 @@ Gestión de la Configuración del Software · Unidad 3: Gestión de la construcc
 
 ## Autores
 - Anghello Fernando Almeida Campoverde (AnghelloAlmeida)
+
+- Rol: documentación y pruebas del proyecto
