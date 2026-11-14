@@ -54,12 +54,21 @@
     return lista.map(i => (i.id === id ? Object.assign({}, i, { estado: nuevoEstado }) : i));
   }
 
+  /** Filtra la lista por estado. "todas" o vacío devuelve todas las incidencias. */
+  function filtrarPorEstado(lista, filtro) {
+    if (!filtro || filtro === 'todas') {
+      return lista.slice();
+    }
+    return lista.filter(i => i.estado.toLowerCase() === filtro);
+  }
+
   const api = {
     ESTADOS,
     PRIORIDADES,
     validarIncidencia,
     crearIncidencia,
-    cambiarEstado
+    cambiarEstado,
+    filtrarPorEstado
   };
 
   if (typeof module !== 'undefined' && module.exports) {
