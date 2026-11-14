@@ -9,7 +9,7 @@
 <body>
   <header>
     <h1>Sistema de Registro de Incidencias</h1>
-    <span class="version" id="version">v1.0.0</span>
+    <span class="version" id="version">v1.1.0</span>
   </header>
 
   <main>
@@ -41,7 +41,17 @@
     </section>
 
     <section class="tarjeta">
-      <h2>Incidencias registradas</h2>
+      <div class="cabecera-lista">
+        <h2>Incidencias registradas</h2>
+        <label class="filtro">Filtrar por estado
+          <select id="filtro-estado">
+            <option value="todas">Todas</option>
+            <option value="abierta">Abierta</option>
+            <option value="en-proceso">En proceso</option>
+            <option value="resuelta">Resuelta</option>
+          </select>
+        </label>
+      </div>
       <p id="contador" class="contador"></p>
       <table>
         <thead>
