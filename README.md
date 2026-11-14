@@ -10,6 +10,7 @@ Aplicación web sencilla para **registrar, listar y filtrar incidencias** report
 |---|---|
 | `v1.0.0` | Registro de incidencias (título, descripción, quién reporta, prioridad) y listado con cambio de estado. |
 | `v1.1.0` | Filtro de incidencias por estado (Todas, Abierta, En proceso, Resuelta) y contador de resultados. |
+| `v1.1.1` | Corrección: el filtro "En proceso" no mostraba resultados (issue #4). |
 
 ## Estructura del proyecto
 
